@@ -1,5 +1,7 @@
 # SPA connected to Marvel API
 
+[Live demo](https://technical-test-marvel-characters.netlify.com/)
+
 Browse characters and click on them to access their details (Name, comics, description)
 
 ## Run locally
