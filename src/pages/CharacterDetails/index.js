@@ -12,7 +12,7 @@ import { Button, Typography } from '@material-ui/core';
 import FaceIcon from '@material-ui/icons/Face';
 import ClockIcon from '@material-ui/icons/QueryBuilder';
 import LeftArrowIcon from '@material-ui/icons/KeyboardArrowLeft';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { compose } from 'redux';
 import * as queryString from 'query-string';
 import * as moment from 'moment';
@@ -27,15 +27,14 @@ class CharacterDetails extends React.Component {
     this.props.fetchCharacterDetails();
   }
 
-  // Go back to characters listing page
-  goBackToListing = () => {
-    const {
-      history,
-      location
-    } = this.props;
+  /*  Generate url to go back to the listing page specified
+   *  in the from_page query string parameter
+   */
+  backToListingUrl = () => {
+    const { location  } = this.props;
 
     const fromPage = queryString.parse(location.search).from_page || 1;
-    history.push(addParamsToUrl(Routes.CHARACTERS_LIST, { page: fromPage }));
+    return addParamsToUrl(Routes.CHARACTERS_LIST, { page: fromPage });
   };
 
   render () {
@@ -58,7 +57,10 @@ class CharacterDetails extends React.Component {
     return (
       <Container>
         {/* Back to listing button */}
-        <Button onClick={this.goBackToListing}>
+        <Button
+          component={Link}
+          to={this.backToListingUrl()}
+        >
           <LeftArrowIcon />
           Back to characters list
         </Button>
