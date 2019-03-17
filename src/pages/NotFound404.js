@@ -4,7 +4,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Routes from '@routes';

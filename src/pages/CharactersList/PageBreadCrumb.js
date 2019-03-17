@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 import LeftArrowIcon from '@material-ui/icons/KeyboardArrowLeft';
 import RightArrowIcon from '@material-ui/icons/KeyboardArrowRight';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux';
 import Routes, { addParamsToUrl } from '@routes';
 

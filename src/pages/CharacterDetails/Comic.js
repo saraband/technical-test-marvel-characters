@@ -4,7 +4,7 @@
 
 import React, { memo } from 'react';
 import styled from 'styled-components';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import ZoomIcon from '@material-ui/icons/ZoomIn';
 import * as PropTypes from 'prop-types';
 
